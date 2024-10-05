@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            cursor: url(cursor/red_pistol_crosshair.cur), default;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="navbar" class="navbar">
+            <nav>
+                <div class="container">
+                    <div class="menu-toggle">&#9776;</div>
+                    <ul class="nav-links">
+                        <li><a href="#">Spil</a></li>
+                        <li><a href="#">Assets</a></li>
+                        <li><a href="#">Grafik</a></li>
+                        <li><a href="#">Teknik</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="screen">
+            <div id="game">
+                <div id="game_background"></div>
+                <div id="game_elements">
+                    <div id="good_container1">
+                        <div id="good_sprite1"></div>
+                    </div>
+                    <div id="good_container2">
+                        <div id="good_sprite2"></div>
+                    </div>
+                    <div id="good_container3">
+                        <div id="good_sprite3"></div>
+                    </div>
+                    <div id="bad_container1">
+                        <div id="bad_sprite1"></div>
+                    </div>
+                    <div id="bad_container2">
+                        <div id="bad_sprite2"></div>
+                    </div>
+                    <div id="bad_container3">
+                        <div id="bad_sprite3"></div>
+                    </div>
+                </div>
+
+                <div id="game_foreground">
+                </div>
+                <div id="mette_container">
+                </div>
+                <div id="game_ui">
+                    <div id="score_board">
+                        <div id="points"></div>
+                    </div>
+                    <div id="life_board">
+                        <div id="liv"></div>
+                    </div>
+                    <div id="time_board">
+                        <div id="time_container" class="">
+                        </div>
+                        <div id="time_sprite"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <a id="mute" onclick="toggleMute()">Mute/Unmute</a>
+
+            <div id="start" class="">
+                <div id="start_txt">Skyd så mange mink du kan på 1 minut og undgå at blive distraheret af de lækre
+                    makrelmadder!</div>
+                <button id="start_knap">START!</button>
+                <div id="logo_container"></div>
+                <div id="mette_frederiksen"></div>
+            </div>
+            <div id="game_over" class="">
+                <div id="game_over_txt">GAMEOVER</div>
+                <div id="game_over_points">Du fik ?? points</div>
+                <div id="genstart1">Prøv igen</div>
+                <div id="forside1">Til forsiden</div>
+                <div id="mette_container1">
+                </div>
+            </div>
+            <div id="level_complete" class="level_complete">
+                <div id="level_complete_txt">Sådan, du vandt!</div>
+                <div id="level_complete_points"></div>
+                <div id="genstart2">Prøv igen</div>
+                <div id="forside2">Til forsiden</div>
+                <div id="mette_container2">
+                </div>
+            </div>
+        </div>
+
+        <audio id="introMusic">
+            <source src="sounds/intromusic.wav" type="audio/mp3">
+        </audio>
+
+        <audio id="backgroundMusic">
+            <source src="sounds/spil.mp3" type="audio/mp3">
+        </audio>
+
+        <audio id="tabtMusic">
+            <source src="sounds/tabtmusic.wav" type="audio/mp3">
+        </audio>
+
+        <audio id="vundetMusic">
+            <source src="sounds/vundetMusic.wav" type="audio/mp3">
+        </audio>
+
+        <div id="sounds">
+            <audio src="sounds/aflives.wav" id="aflives"></audio>
+            <audio src="sounds/levmeddet.wav" id="lev_med_det"></audio>
+            <audio src="sounds/minkdød.wav" id="mink_død"></audio>
+            <audio src="sounds/spisemakrel.wav" id="spise_makrel"></audio>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

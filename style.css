@@ -1,0 +1,530 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Bangers";
+  font-size: 2rem;
+}
+#screen {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+#game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+#start {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1920/1080;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(img/startbackground.svg);
+  background-size: cover;
+}
+#logo_container {
+  width: 50%;
+  aspect-ratio: 1451/377;
+  position: absolute;
+  top: 8%;
+  left: 25%;
+  background-image: url(img/mmmlogo.svg);
+  background-size: cover;
+  pointer-events: none;
+}
+#mette_frederiksen {
+  width: 28%;
+  aspect-ratio: 784/970;
+  position: absolute;
+  top: 36%;
+  left: 12%;
+  background-image: url(img/mettefrederiksen.svg);
+  background-size: cover;
+  pointer-events: none;
+}
+.hide {
+  display: none;
+}
+#start_knap {
+  border: solid black;
+  border: 5px solid;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Bangers";
+  height: 5rem;
+  width: 10rem;
+  font-size: 2rem;
+  background-color: orange;
+  cursor: pointer;
+}
+#game_over {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1920/1080;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(img/startbackground.svg);
+  background-size: cover;
+  z-index: 1000;
+}
+#level_complete {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1920/1080;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(img/startbackground.svg);
+  background-size: cover;
+}
+#game_background {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1920/1080;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(img/background.svg);
+  background-size: cover;
+}
+#game_elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#game_foreground {
+  width: 65%;
+  aspect-ratio: 1131/516;
+  position: absolute;
+  top: 49%;
+  left: 36%;
+  background-image: url(img/hoballer.svg);
+  background-size: cover;
+  pointer-events: none;
+}
+#mette_container {
+  width: 28%;
+  aspect-ratio: 784/970;
+  position: absolute;
+  top: 24%;
+  left: 14%;
+  background-image: url(img/mettefrederiksen.svg);
+  background-size: cover;
+  pointer-events: none;
+}
+#mette_container1 {
+  width: 28%;
+  aspect-ratio: 860/989;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  background-image: url(img/mette_container2.svg);
+  background-size: cover;
+  pointer-events: none;
+}
+#mette_container2 {
+  width: 20%;
+  aspect-ratio: 557/1001;
+  position: absolute;
+  top: 34%;
+  left: 12%;
+  background-image: url(img/mette_container1.svg);
+  background-size: cover;
+  pointer-events: none;
+}
+
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+#score_board {
+  width: 5%;
+  aspect-ratio: 640/914;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  background-image: url(img/ministerpension.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#points {
+  font-family: "Pacifico", cursive;
+  font-size: xxx-large;
+  margin-top: 10%;
+  margin-left: 20%;
+}
+#life_board {
+  width: 10%;
+  aspect-ratio: 812/516;
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  background-image: url(img/mundbindliv.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#liv {
+  font-family: "Pacifico", cursive;
+  font-size: xxx-large;
+  margin-left: 45%;
+  margin-top: 5%;
+}
+
+#good_container1,
+#good_container2,
+#good_container3 {
+  width: 3.5%;
+  aspect-ratio: 456/1011;
+  position: absolute;
+  top: -15%;
+}
+#good_sprite1,
+#good_sprite2,
+#good_sprite3 {
+  width: 100%;
+  height: 100%;
+  background-image: url(img/mink.svg);
+  background-size: cover;
+}
+
+#bad_container1,
+#bad_container2,
+#bad_container3 {
+  width: 5%;
+  aspect-ratio: 620/494;
+  position: absolute;
+  top: -15%;
+}
+#bad_sprite1,
+#bad_sprite2,
+#bad_sprite3 {
+  width: 100%;
+  height: 100%;
+  background-image: url(img/makrelmad.svg);
+  background-size: cover;
+}
+
+.pos1 {
+  left: 50%;
+}
+.pos2 {
+  left: 55%;
+}
+.pos3 {
+  left: 60%;
+}
+.pos4 {
+  left: 70%;
+}
+.pos5 {
+  left: 80%;
+}
+.pos6 {
+  left: 90%;
+}
+.fald {
+  animation-name: fald_kf;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes fald_kf {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(1500%);
+  }
+}
+
+.forsvind_good {
+  animation-name: forsvind_good_kf;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+@keyframes forsvind_good_kf {
+  100% {
+    transform: rotate(600deg) scale(0);
+  }
+}
+
+.forsvind_bad {
+  animation-name: forsvind_bad_kf;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+@keyframes forsvind_bad_kf {
+  20% {
+    scale: 1.5;
+  }
+  30% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
+}
+
+.frys {
+  animation-play-state: paused;
+}
+
+.delay1 {
+  animation-delay: 0s;
+}
+
+.delay2 {
+  animation-delay: 0.3s;
+}
+
+.delay3 {
+  animation-delay: 0.6s;
+}
+
+.delay4 {
+  animation-delay: 0.9s;
+}
+
+#time_container {
+  background-image: url("img/timerkanyle.svg");
+  position: absolute;
+  aspect-ratio: 78/554;
+  width: 4%;
+  top: 5%;
+  left: 95%;
+  overflow: hidden;
+}
+
+#time_sprite {
+  background-image: url(img/syringeliquid.svg);
+  position: absolute;
+  width: 4%;
+  top: 10%;
+  left: 95%;
+  transform-origin: 50% 100%;
+  aspect-ratio: 76/251;
+}
+
+.time {
+  animation-name: time_kf;
+  animation-duration: 30s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes time_kf {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0.5);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}
+#mute {
+  z-index: 1200;
+  position: relative;
+  border: solid black;
+  border-radius: 10px;
+  width: 8%;
+  height: 2%;
+  top: 94%;
+  left: 1%;
+  text-align: center;
+  background-color: orange;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+#start_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#level_complete_txt {
+  position: absolute;
+  top: 25%;
+  left: 33%;
+  font-size: 6rem;
+}
+#game_over_txt {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  font-size: 6rem;
+}
+#level_complete_points {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  font-size: 2rem;
+}
+
+#game_over_points {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  font-size: 2rem;
+}
+
+#start_txt {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 2rem;
+}
+#genstart1,
+#genstart2,
+#start_knap {
+  position: absolute;
+  bottom: 40%;
+  right: 35%;
+  border: black solid 0.3rem;
+  background-color: orange;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  animation-name: pulse_kf;
+  animation-duration: 0.7s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+#forside1,
+#forside2 {
+  position: absolute;
+  bottom: 40%;
+  right: 50%;
+  border: black solid 0.3rem;
+  background-color: orange;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  animation-name: pulse_kf;
+  animation-duration: 0.7s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes pulse_kf {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.2;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1200;
+}
+
+.logo {
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  float: left;
+}
+
+.menu-toggle {
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  float: right;
+}
+
+.nav-links li {
+  margin-left: 50px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  font-size: 1.5rem;
+}
+
+.nav-links a:hover {
+  color: #ff9900;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+#screen {
+  margin-top: 50px;
+}
+.navbar-hidden {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+}
